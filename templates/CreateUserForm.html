@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create user</title>
+
+    <h1>Crear usuario</h1>
+
+    <form action="/loginform/createuser" method="POST">
+        Nombre de usuario: <br>
+        <input type="text" name="user" id="user">
+        <br><br>
+        Nombre: <br>
+        <input type="text" name="nombre" id="nombre">
+        <br><br>
+        Apellido: <br>
+        <input type="text" name="apellido" id="apellido">
+        <br><br>
+        password: <br>
+        <input type="password" name="password" id="password">
+        <br><br>
+        correo: <br>
+        <input type="text" name="correo" id="correo">
+        <br><br>
+        carnet: <br>
+        <input type="text" name="carnet" id="carnet">
+        <br><br>
+        Carrera: <br>
+        <select name="carrera" id="carrera">
+            <option value="ING"> Ingenieria de Negocios</option>
+            <option value="DER">Derecho</option>
+            <option value="ECO">Economia</option>
+        </select>
+        <br><br>
+        Año: <br>
+        <select name="anio" id="anio">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="">-</option>
+        </select>
+         <br><br>
+         Tipo: <br>
+         <select name="rol" id="rol">
+            <option value="2">Tutor</option>
+            <option value="3">Tutorado</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Crear usuario">
+        <br><br>
+        <a href="/loginform">Volver a inicio de sesion</a>
+    </form>
+
+</head>
+<body>
+    
+</body>
+</html>

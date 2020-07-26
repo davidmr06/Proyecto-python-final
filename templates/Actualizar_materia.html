@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Materia</title>
+</head>
+<body>
+    <h1>Actualizar Materia</h1>
+<br><br>
+        <form action="/MainSiteAdmin/materias/actualizar/{{id}}" method="POST">
+            Materia: <br>
+            <input type="text" name="materia" id="materia" value="{{data[0][1]}}"> 
+            <br><br>
+            <input type="hidden" name = "id" id="id" value="{{id}}">
+            <input type="submit" value="Actualizar">
+        </form>
+</body>
+</html>
