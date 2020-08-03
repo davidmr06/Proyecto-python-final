@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create user</title>
+
+    <h1>Crear usuario</h1>
+
+    <form action="/MainSiteAdmin/CrearUsuarioProfesor" method="POST">
+        Nombre de usuario: <br>
+        <input type="text" name="user" id="user">
+        <br><br>
+        Nombre: <br>
+        <input type="text" name="nombre" id="nombre">
+        <br><br>
+        Apellido: <br>
+        <input type="text" name="apellido" id="apellido">
+        <br><br>
+        Password: <br>
+        <input type="password" name="password" id="password">
+        <br><br>
+        Correo: <br>
+        <input type="text" name="correo" id="correo">
+        <br><br>
+        Carrera: <br>
+        <select name="carrera" id="carrera">
+            <option value="ING"> Ingenieria de Negocios</option>
+            <option value="DER">Derecho</option>
+            <option value="ECO">Economia</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Crear usuario">
+        <br><br>
+        <a href="/MainSiteAdmin">Volver al inicio</a>
+    </form>
+
+</head>
+<body>
+    
+</body>
+</html>

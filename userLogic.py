@@ -25,6 +25,14 @@ class UserLogic(Logic):
                 + f"VALUES (0,{carnet},'{usuario}','{nombre}','{apellido}','{password}','{correo}', '{carrera}',{anio},{tipouser});")
         rows = database.executeNonQueryRows(sql)
         return rows
+    def InsertProfesor(self, user,Nombre,Apellido, password,Correo,Carrera):
+        database = self.get_databaseXObj()
+        sql = ("INSERT INTO `tutorias`.`usuarios` (`id`,`usuario`,`Nombre`,`Apellido`,`password`,`Correo`,`Carrera`,`IdtipoUsuario`) "
+                + f"VALUES (0,'{user}','{Nombre}','{Apellido}','{password}','{Correo}','{Carrera}',2);")
+        database.executeNonQueryRows(sql)
+
+
+
     #Tabla Materias
     def getMaterias(self):
         database = self.get_databaseXObj()

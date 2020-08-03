@@ -42,6 +42,7 @@ def LoginForm():
                 return render_template("LoginForm.html", message= "Usuario o contraseña incorrecto")
         else:
             return render_template("LoginForm.html", message= "Usuario o contraseña incorrecto")
+
 @app.route("/loginform/createuser", methods=['GET','POST'])
 def CreateUser():
     if request.method == 'GET':
@@ -204,6 +205,23 @@ def BorrarTipoUser(id):
     if request.method=="GET":
         database.BorrarTipoUserbyID(id)
         return redirect("/MainSiteAdmin/TiposUsuarios")
+
+@app.route("/MainSiteAdmin/CrearUsuarioProfesor", methods=["GET","POST"])
+def CrearProfesor():
+    database = UserLogic()
+    if request.method=='GET':
+        return render_template("User_profesor.html")
+    else:
+        usuario = request.form["user"]
+        Nombre = request.form["nombre"]
+        Apellido = request.form["apellido"]
+        Password = request.form["password"]
+        Correo = request.form["correo"]
+        carrera = request.form["carrera"]
+        database.InsertProfesor(usuario,Nombre,Apellido,Password,Correo,carrera)
+        return redirect("/MainSiteAdmin/CrearUsuarioProfesor")
+        
+
 #Tabla Usuarios
 @app.route("/MainSiteAdmin/Usuarios",methods=['GET','POST'])
 def Usuarios():
