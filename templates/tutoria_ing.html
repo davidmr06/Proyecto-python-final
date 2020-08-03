@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoria Ingeniería</title>
+    <h1>Pedir tutoria</h1> 
+</head>
+<body>
+    <form action="/MainSite/Ingenieria/tutoria" method="POST">
+        Tutor: <br><br>
+        <select name="tutor" id="tutor">
+            {% for tutores in datatutores %}
+            <option value="{{tutores[0]}}">{{tutores[1]}} {{tutores[2]}} </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        Materia: <br><br>
+        <select name="materia" id="materia">
+            {% for materia in Materias %}
+            <option value="{{materia[0]}}">{{materia[1]}}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        Fecha: <br><br>
+        <input type="date" name="fecha" id="fecha">
+        <br><br>
+        Hora: <br><br>
+        <input type="time" name="hora" id="hora">
+        <br><br>
+        Precio: <br><br>
+        <input type="number" name="precio" id="precio">
+        <br><br>
+        <input type="submit" value="Solicitar">
+        <br><br>
+        <a href="/MainSite/Ingenieria">Regresar a los tutores</a>
+    </form>
+</body>
+</html>

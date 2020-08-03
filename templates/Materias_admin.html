@@ -25,9 +25,15 @@
 <body>
     <h1>Materias disponibles</h1>
     <p>Insertar materia</p>
+    <br>
+    <a href="/MainSiteAdmin">Volver al inicio</a>
+    <br><br>
         <form action="/MainSiteAdmin/materias" method="POST">
             Materia: <br>
             <input type="text" name="materia" id="materia">
+            <br><br>
+            Carrera: <br>
+            <input type="text" name="carrera" id="carrera">
             <br><br>
             <input type="submit" value="Agregar">
         </form>
@@ -35,10 +41,12 @@
         <table style="width: 20%">
             <tr>
               <th>Materia</th>
+              <th>Carrera</th>
             </tr>
             {% for materia in Materias %}
             <tr>
               <td>{{materia[1]}}</td>
+              <td>{{materia[2]}}</td>
               <td> <a href="/MainSiteAdmin/materias/actualizar/{{materia[0]}}">Actualizar</a></td>
               <td><a href="/MainSiteAdmin/materias/borrar/{{materia[0]}}">Borrar</a></td>
             </tr>

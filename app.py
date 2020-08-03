@@ -5,6 +5,8 @@ from UserObj import UserObj
 
 app = Flask(__name__)
 
+User = {"id":"", "User":""}
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -22,10 +24,19 @@ def LoginForm():
         if userdata is not None:
             if userdata.password==password:
                 if userdata.role==1:
+                    User["id"] = userdata.id
+                    User["User"] = userdata.user
+                    print(User)
                     return render_template("MainSite_admin.html",userdata=userdata.user)
                 if userdata.role==2:
+                    User["id"] = userdata.id
+                    User["User"] = userdata.user
+                    print(User)
                     return render_template("MainSite_tutor.html",userdata=userdata.user)
                 else:
+                    User["id"] = userdata.id
+                    User["User"] = userdata.user
+                    print(User)
                     return render_template("MainSite.html",userdata=userdata.user)
             else:
                 return render_template("LoginForm.html", message= "Usuario o contraseña incorrecto")
@@ -50,18 +61,85 @@ def CreateUser():
         print (f" {rows} affected")
         return redirect("/loginform/createuser")
 
+@app.route("/MainSiteUser")
+def MainSiteUser():
+   user = User.get("User")
+   return render_template("MainSite.html", userdata = user)
+
+@app.route("/MainSiteTutor")
+def MainSiteTutor():
+   user = User.get("User")
+   return render_template("MainSite_tutor.html", userdata = user)
+
+@app.route("/MainSiteAdmin")
+def MainSiteAdmin():
+   user = User.get("User")
+   return render_template("MainSite_admin.html", userdata = user)
+
 @app.route("/MainSite/Ingenieria")
 def ING():
     return render_template("Ingenieria.html")
+  
+@app.route("/MainSite/Ingenieria/tutoria",  methods=["GET","POST"])
+def tutoriaING():
+    database = UserLogic()
+    if request.method == "GET":
+        tutores = database.TutoresING()
+        materiasING = database.MateriasING()
+        return render_template("tutoria_ing.html", datatutores = tutores,  Materias = materiasING)
+    else: 
+        tutor = request.form["tutor"]
+        alumno = User.get("id")
+        materiat = request.form["materia"]
+        fechat = request.form["fecha"]
+        horat = request.form["hora"]
+        Preciot = request.form["precio"]
+        database.InsertSolicitud(tutor,alumno,materiat,fechat,horat,Preciot)
+        return redirect("/MainSite/Ingenieria/tutoria")
+
 
 @app.route("/MainSite/Economia")
-
 def ECO():
     return render_template("Eco.html")
+
+@app.route("/MainSite/Economia/tutoria",  methods=["GET","POST"])
+def tutoriaECO():
+    database = UserLogic()
+    if request.method == "GET":
+        tutores = database.TutoresECO()
+        materiasECO = database.MateriasECO()
+        return render_template("tutoria_eco.html", datatutores = tutores,  Materias = materiasECO)
+    else: 
+        tutor = request.form["tutor"]
+        alumno = User.get("id")
+        materiat = request.form["materia"]
+        fechat = request.form["fecha"]
+        horat = request.form["hora"]
+        Preciot = request.form["precio"]
+        database.InsertSolicitud(tutor,alumno,materiat,fechat,horat,Preciot)
+        return redirect("/MainSite/Economia/tutoria")
 
 @app.route("/MainSite/Derecho")
 def DER():
     return render_template("Derecho.html")
+
+@app.route("/MainSite/Derecho/tutoria",  methods=["GET","POST"])
+def tutoriaDER():
+    database = UserLogic()
+    if request.method == "GET":
+        tutores = database.TutoresDER()
+        materiasDER = database.MateriasDER()
+        return render_template("tutorias_der.html", datatutores = tutores,  Materias = materiasDER)
+    else: 
+        tutor = request.form["tutor"]
+        alumno = User.get("id")
+        materiat = request.form["materia"]
+        fechat = request.form["fecha"]
+        horat = request.form["hora"]
+        Preciot = request.form["precio"]
+        database.InsertSolicitud(tutor,alumno,materiat,fechat,horat,Preciot)
+        return redirect("/MainSite/Derecho/tutoria")
+
 #TablaMaterias
 @app.route("/MainSiteAdmin/materias",methods=['GET','POST'])
 def Materias():
@@ -71,8 +149,9 @@ def Materias():
         return render_template("Materias_admin.html",Materias = data)
     if request.method=="POST":
         materia = request.form["materia"]
+        carrera = request.form["carrera"]
         database=UserLogic()
-        database.InsertMateria(materia)
+        database.InsertMateria(materia,carrera)
         return redirect("/MainSiteAdmin/materias")
 
 @app.route("/MainSiteAdmin/materias/actualizar/<int:id>", methods=["GET", "POST"])
@@ -84,7 +163,8 @@ def ActualizarMateria(id):
     else:
         materia = request.form["materia"]
         id = request.form["id"]
-        database.ActualizarMateria(id,materia)
+        carrer = request.form["carrera"]
+        database.ActualizarMateria(id,materia,carrer)
         return redirect("/MainSiteAdmin/materias")
 
 @app.route("/MainSiteAdmin/materias/borrar/<int:id>", methods=["GET"])
@@ -171,6 +251,21 @@ def BorrarUser(id):
     if request.method=="GET":
         database.BorrarUserbyID(id)
         return redirect("/MainSiteAdmin/Usuarios")
+
+@app.route("/MainSite/Mistutorias")
+def VerMisTutorias():
+    database = UserLogic()
+    id = User.get("id")
+    data = database.EstadoTutorias(id)
+    return render_template("Estado_tutorias.html",Informacion = data)
+
+@app.route("/MainSite/TutoriasSolicitadas")
+def VerMisSolicitudes():
+    database = UserLogic()
+    id = User.get("id")
+    data = database.TutoriasSolicitadas(id)
+    return render_template("Solicitudes_tutorias.html",Informacion = data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
