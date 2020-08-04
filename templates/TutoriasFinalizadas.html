@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estado tutorias solicitadas</title>
+    <title>Tutorias solicitadas</title>
     <style>
         table {
           font-family: arial, sans-serif;
@@ -23,9 +23,19 @@
         </style>
 </head>
 <body>
-    <h1>Estado de tutorias solicitadas</h1>
+    <h1>Valoración tutorías</h1>
     <a href="/MainSiteUser">Volver a la pagina principal</a>
-    <br><br>
+        <br><br>
+        <form action="/MainSite/TutoriasFinalizadas" method="POST">
+          Número de tutoría: <br><br>
+          <input type="number" name="id" id="id" min="0" max="100">
+          <br><br>
+          Calificación:<br><br>
+          <input type="number" name="calificacion" id="calificacion" min="0" max="10">  
+          <br><br>
+          <input type="submit" value="Enviar">
+        </form>
+        <br><br>
         <table style="width: 20%">
             <tr>
               <th>Número de tutoria</th>
@@ -35,7 +45,7 @@
               <th>Fecha</th>
               <th>Hora</th>
               <th>Precio</th>
-              <th>Estado</th>
+              <th>Valoración</th>
             </tr>
             {% for inf in Informacion %}
             <tr>
@@ -51,4 +61,3 @@
             {% endfor %}
           </table>
           
-

@@ -12,7 +12,7 @@ User = {"id":"", "User":""}
 @app.route("/")
 def index():
     return render_template("index.html")
-
+#Inicio Sesion
 @app.route("/loginform", methods=['GET','POST'])
 def LoginForm():
     if request.method=='GET':
@@ -44,7 +44,7 @@ def LoginForm():
                 return render_template("LoginForm.html", message= "Usuario o contraseña incorrecto")
         else:
             return render_template("LoginForm.html", message= "Usuario o contraseña incorrecto")
-
+#Crear Usuario
 @app.route("/loginform/createuser", methods=['GET','POST'])
 def CreateUser():
     if request.method == 'GET':
@@ -63,7 +63,7 @@ def CreateUser():
         rows =  logic.InsertUser(carnet,user,name,apellido,password,correo,carrera,anio,tipo)
         print (f" {rows} affected")
         return redirect("/loginform/createuser")
-
+#Main Site: admin, tutor, user
 @app.route("/MainSiteUser")
 def MainSiteUser():
    user = User.get("User")
@@ -78,11 +78,11 @@ def MainSiteTutor():
 def MainSiteAdmin():
    user = User.get("User")
    return render_template("MainSite_admin.html", userdata = user)
-
+#Ingenieria turores
 @app.route("/MainSite/Ingenieria")
 def ING():
     return render_template("Ingenieria.html")
-  
+#pedir Tutor Ingenieria
 @app.route("/MainSite/Ingenieria/tutoria",  methods=["GET","POST"])
 def tutoriaING():
     database = UserLogic()
@@ -100,11 +100,11 @@ def tutoriaING():
         database.InsertSolicitud(tutor,alumno,materiat,fechat,horat,Preciot)
         return redirect("/MainSite/Ingenieria/tutoria")
 
-
+#Tutores Eco
 @app.route("/MainSite/Economia")
 def ECO():
     return render_template("Eco.html")
-
+#Pedir tutor
 @app.route("/MainSite/Economia/tutoria",  methods=["GET","POST"])
 def tutoriaECO():
     database = UserLogic()
@@ -121,11 +121,11 @@ def tutoriaECO():
         Preciot = request.form["precio"]
         database.InsertSolicitud(tutor,alumno,materiat,fechat,horat,Preciot)
         return redirect("/MainSite/Economia/tutoria")
-
+#Tutores Derecho
 @app.route("/MainSite/Derecho")
 def DER():
     return render_template("Derecho.html")
-
+#Pedir tutor
 @app.route("/MainSite/Derecho/tutoria",  methods=["GET","POST"])
 def tutoriaDER():
     database = UserLogic()
@@ -278,8 +278,22 @@ def VerMisTutorias():
     id = User.get("id")
     data = database.EstadoTutorias(id)
     return render_template("Estado_tutorias.html",Informacion = data)
+
+@app.route("/MainSite/TutoriasFinalizadas", methods=['GET','POST'])
+def TutoriasFinalizadas():
+    database= UserLogic()
+    id = User.get("id")
+    if request.method=='GET':
+        data = database.VerTutoriasFinalizadas(id)
+        return render_template("TutoriasFinalizadas.html", Informacion = data)
+    else:
+        idTutoria = request.form["id"]
+        Valoracion = request.form["calificacion"]
+        database.EnviarValoracion(idTutoria,Valoracion)
+        return redirect("/MainSite/TutoriasFinalizadas")
+
 #Sitio tutores
-@app.route("/MainSite/TutoriasSolicitadas",methods=['GET','POST'])
+@app.route("/MainSiteTutor/TutoriasSolicitadas",methods=['GET','POST'])
 def VerMisSolicitudes():
     database = UserLogic()
     id = User.get("id")
@@ -291,6 +305,25 @@ def VerMisSolicitudes():
         Estado = request.form["Estado"]
         database.ActualizarEstadoTutoria(id,Estado)
         return redirect("/MainSite/TutoriasSolicitadas")
+
+@app.route("/MainSiteAdmin/TutoriasSolicitadas",methods=['GET','POST'])
+def TodasSolicitudes():
+    database = UserLogic()
+    if request.method=='GET':
+        data = database.TodasSolicitudes()
+        return render_template("Solicitudes_tutorias_admin.html", Informacion = data)
+    else:
+        idtutoria = request.form["id"]
+        newEstado = request.form["Estado"]
+        database.ActualizarEstadoTutoria(idtutoria,newEstado)
+        return redirect("/MainSiteAdmin/TutoriasSolicitadas")
+
+@app.route("/MainSiteTutor/ValoracionTutorias",methods=['GET','POST'])
+def CalificacionTutorias():
+    database = UserLogic()
+    id = User.get("id")
+    data = database.VerCalificaciones(id)
+    return render_template("TutoriasFin_tutor.html", Informacion = data)
 
 if __name__ == '__main__':
     app.run(debug=True)

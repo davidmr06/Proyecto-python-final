@@ -24,11 +24,11 @@
 </head>
 <body>
     <h1>Tutorias solicitadas</h1>
-    <a href="/MainSiteTutor">Volver a la pagina principal</a>
+    <a href=/MainSiteTutor>Volver a la pagina principal</a>
         <br><br>
-        <form action="/MainSite/TutoriasSolicitadas" method="POST">
+        <form action="/MainSiteTutor/TutoriasSolicitadas" method="POST">
           Número de tutoría: <br><br>
-          <input type="number" name="id" id="id">
+          <input type="number" name="id" id="id" min="0" max="100">
           <br><br>
           Cambiar estado a:<br><br>
           <select name="Estado" id="Estados" >

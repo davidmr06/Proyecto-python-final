@@ -170,3 +170,41 @@ class UserLogic(Logic):
         sql= f"UPDATE `tutorias`.`solicitudes` SET `Estados` = '{estado}' WHERE (`id` = '{id}');"
         data = database.executeNonQueryRows(sql)
         return data
+    
+    def VerTutoriasFinalizadas(self,id):
+        database = self.get_databaseXObj()
+        sql = ("SELECT tutorias_alumnos.id,usuarios.Nombre, usuarios.Apellido, materias.Materia, " +
+                "tutorias_tutor.Fecha, " +
+                "tutorias_tutor.Hora_tutoria,tutorias_tutor.Precio, " +
+                "tutorias_alumnos.Valoracion " +
+                "FROM tutorias.tutorias_alumnos " + 
+                "inner join tutorias_tutor on tutorias_alumnos.idtutoriastutor = tutorias_tutor.id " +
+                "inner join materias on tutorias_tutor.idmateria = materias.id " +
+                "inner join usuarios on tutorias_tutor.idtutor = usuarios.id " +
+                f"where tutorias_alumnos.IdAlumno= {id}") 
+        data = database.executeQuery(sql)
+        return data
+    def EnviarValoracion(self, id, valoracion):
+        database = self.get_databaseXObj()
+        sql = f"UPDATE `tutorias`.`tutorias_alumnos` SET `Valoracion` = '{valoracion}' WHERE (`id` = '{id}');"
+        data = database.executeNonQueryRows(sql)
+        return data
+    def TodasSolicitudes(self):
+        database = self.get_databaseXObj()
+        sql = ("select solicitudes.id, usuarios.nombre, usuarios.apellido, materias.Materia, solicitudes.fecha, solicitudes.hora, "
+                + "solicitudes.precio, solicitudes.Estados "
+                 + "from solicitudes inner join " 
+                + "usuarios on solicitudes.idtutor = usuarios.id "
+               + "inner join materias on solicitudes.Materia = materias.id ")
+        data = database.executeQuery(sql)
+        return data
+    def VerCalificaciones (self,id):
+        database = self.get_databaseXObj()
+        sql = ("select tutorias_alumnos.id,usuarios.Nombre, usuarios.Apellido, materias.Materia, "
+               + "tutorias_tutor.Fecha,tutorias_tutor.Hora_tutoria,tutorias_tutor.Precio, " +
+                "tutorias_alumnos.Valoracion from usuarios join tutorias_alumnos on usuarios.id = tutorias_alumnos.IdAlumno " +
+                "join tutorias_tutor on tutorias_alumnos.idtutoriastutor = tutorias_tutor.id " +
+                "join materias on tutorias_tutor.idmateria = materias.id " +	
+                f"where tutorias_tutor.idtutor = {id};")
+        data = database.executeQuery(sql)
+        return data
