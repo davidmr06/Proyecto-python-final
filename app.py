@@ -3,6 +3,8 @@ from urllib.parse import urlparse
 from userLogic import UserLogic
 from UserObj import UserObj
 
+#git push --set-upstream https://github.com/davidmr06/Proyecto-python-final master
+
 app = Flask(__name__)
 
 User = {"id":"", "User":""}
@@ -269,21 +271,26 @@ def BorrarUser(id):
     if request.method=="GET":
         database.BorrarUserbyID(id)
         return redirect("/MainSiteAdmin/Usuarios")
-
+#Sitio Alumnos
 @app.route("/MainSite/Mistutorias")
 def VerMisTutorias():
     database = UserLogic()
     id = User.get("id")
     data = database.EstadoTutorias(id)
     return render_template("Estado_tutorias.html",Informacion = data)
-
-@app.route("/MainSite/TutoriasSolicitadas")
+#Sitio tutores
+@app.route("/MainSite/TutoriasSolicitadas",methods=['GET','POST'])
 def VerMisSolicitudes():
     database = UserLogic()
     id = User.get("id")
-    data = database.TutoriasSolicitadas(id)
-    return render_template("Solicitudes_tutorias.html",Informacion = data)
-
+    if request.method=='GET':
+        data = database.TutoriasSolicitadas(id)
+        return render_template("Solicitudes_tutorias.html",Informacion = data)
+    else: 
+        id = request.form["id"]
+        Estado = request.form["Estado"]
+        database.ActualizarEstadoTutoria(id,Estado)
+        return redirect("/MainSite/TutoriasSolicitadas")
 
 if __name__ == '__main__':
     app.run(debug=True)

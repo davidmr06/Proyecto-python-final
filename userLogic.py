@@ -142,9 +142,10 @@ class UserLogic(Logic):
         sql = f"INSERT INTO `tutorias`.`solicitudes` (id,idtutor,idalumno,Materia,fecha,hora,Precio,`Estados`) VALUES(0,{idtutor},{idalumno},{materia},'{fecha}','{hora}',{precio},'Pendiente');"
         data = database.executeNonQueryRows(sql)
         return data
+    #Funcion para alumnos
     def EstadoTutorias (self, id):
         database = self.get_databaseXObj()
-        sql = ("select  usuarios.nombre, usuarios.apellido, materias.Materia, solicitudes.fecha, solicitudes.hora, "
+        sql = ("select solicitudes.id, usuarios.nombre, usuarios.apellido, materias.Materia, solicitudes.fecha, solicitudes.hora, "
                 + "solicitudes.precio, solicitudes.Estados "
                  + "from solicitudes inner join " 
                 + "usuarios on solicitudes.idtutor = usuarios.id "
@@ -152,10 +153,10 @@ class UserLogic(Logic):
                + f"where solicitudes.idalumno ={id}")
         data = database.executeQuery(sql)
         return data
-
+    #Funcion para tutores
     def TutoriasSolicitadas (self, id):
         database = self.get_databaseXObj()
-        sql = ("select  usuarios.nombre, usuarios.apellido, materias.Materia, solicitudes.fecha, solicitudes.hora, "
+        sql = ("select solicitudes.id, usuarios.nombre, usuarios.apellido, materias.Materia, solicitudes.fecha, solicitudes.hora, "
                 + "solicitudes.precio, solicitudes.Estados "
                  + "from solicitudes inner join " 
                 + "usuarios on solicitudes.idalumno = usuarios.id "
@@ -163,4 +164,9 @@ class UserLogic(Logic):
                + f"where solicitudes.idtutor ={id}")
         data = database.executeQuery(sql)
         return data
-                
+               
+    def ActualizarEstadoTutoria(self,id,estado):
+        database = self.get_databaseXObj()
+        sql= f"UPDATE `tutorias`.`solicitudes` SET `Estados` = '{estado}' WHERE (`id` = '{id}');"
+        data = database.executeNonQueryRows(sql)
+        return data

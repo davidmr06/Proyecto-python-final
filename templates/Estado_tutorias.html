@@ -24,10 +24,9 @@
 </head>
 <body>
     <h1>Estado de tutorias solicitadas</h1>
-    <a href="/MainSiteUser">Volver a la pagina principal</a>
-        <br><br>
         <table style="width: 20%">
             <tr>
+              <th>Número de tutoria</th>
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Materia</th>
@@ -43,8 +42,9 @@
               <td>{{inf[2]}}</td>
               <td>{{inf[3]}}</td>
               <td>{{inf[4]}}</td>
-              <td>${{inf[5]}}</td>
-              <td>{{inf[6]}}</td>
+              <td>{{inf[5]}}</td>
+              <td>${{inf[6]}}</td>
+              <td>{{inf[7]}}</td>
             </tr>
             {% endfor %}
           </table>
