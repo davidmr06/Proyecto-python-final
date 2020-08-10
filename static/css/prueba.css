@@ -8,13 +8,13 @@ body{
     overflow: hidden;
     font-family: 'Gudea', sans-serif;
     background: rgb(44, 99, 201) ; 
-    background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, #bb6dec 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(44, 99, 201) ), color-stop(100%,#bb6dec)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,#bb6dec 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,#bb6dec 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,#bb6dec 100%); /* IE10+ */
-  background: linear-gradient(135deg,  rgb(44, 99, 201)  0%,#bb6dec 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 201) ', endColorstr='#bb6dec',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, gold 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(44, 99, 201) ), color-stop(100%,gold)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* IE10+ */
+  background: linear-gradient(135deg,  rgb(44, 99, 201)  0%,gold 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 201) ', endColorstr='gold',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
 
@@ -25,7 +25,7 @@ h1{
 }
 
 a{
-    color: #bb6dec;
+    color: gold;
     font-weight:700;
     font-size: medium;
     text-decoration:none;
@@ -41,7 +41,7 @@ a{
 .btn {
     border: 2px solid black;
     background-color: black;
-    color: #bb6dec;
+    color: gold;
     padding: 14px 28px;
     font-size: 16px;
     border-radius: 25px;
@@ -50,12 +50,13 @@ a{
   
   /* Green */
   .success {
-    border-color: #bb6dec;
-    color: #bb6dec;
+    border-color: gold;
+    color: gold;
+    /*font-color: black;*/
   }
 
   .success:hover {
-    background-color: #bb6dec;
+    background-color: gold;
     color: white;
   }
 

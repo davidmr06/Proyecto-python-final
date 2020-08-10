@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-
-<body>
-    <h1>Iniciar Sesion</h1>
-    <br>
-
-    <p style="color: red;">{{message}}</p>
-    <form action="/loginform" method="POST">
-        Usuario: <br>
-        <input type="text" name="user" id="user" placeholder="Usuario">
-        <br><br>
-        Contraseña: <br>
-        <input type="password" name="password" id="password" placeholder="Contraseña">
-        <br><br>
-        <input type="submit" value="Iniciar sesion">
-        <br><br>
-        <p>¿No tienes usuario?</p>
-        <p>¡Crea uno!</p>
-        <a href="/loginform/createuser">Ir a registro de usuario</a>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/css/login.css" rel="stylesheet">
+        <title>Login</title>
+    </head>
+    <body>
+        <div class= 'login'>
+            <div class='login_title'>
+                <h1>INICIO SESIÓN</h1>
+                <br>
+            </div>
+            <!-- <p style="color: red;"></p>-->
+            <form class='login_fields' action="/loginform" method="POST"> 
+                <div class='login_fields__user'>
+                    <h2>Usuario </h2>
+                    <br>
+                        <div class='icon'>
+                            <!--<img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png%27%3E0'>-->
+                        </div>
+                    <input type="text" name="user" id="user" placeholder="Usuario">  
+                        <div class='validation'>
+                            <!--<img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png%27%3E'>-->
+                        </div>
+                    </input>
+                        <br><br>
+                </div>
+                <div class='login_fields__password'>  
+                    <h3>Contraseña</h3>
+                    <br>
+                        <div class='icon'>
+                            <!--<img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png%27%3E'>-->
+                        </div>
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                        <div class='validation'>
+                            <!--<img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png%27%3E'>-->
+                        </div>
+                    <br>
+                </div>
+                <div class='login_fields__submit'>
+                    <br>
+                        <div class='btn2 success'>
+                            <input type="submit" value="Iniciar sesion">
+                        </div>
+                    <br><br>
+                    <div class='forgot'>   
+                        <p1>¿No tienes usuario?</p1>
+                        <p2>¡Crea uno!</p2>
+                        <a href="/loginform/createuser">Ir a registro de usuario</a>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
