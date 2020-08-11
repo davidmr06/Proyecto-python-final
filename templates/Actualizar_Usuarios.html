@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/ActualizarUsuarios.css" rel="stylesheet">
     <title></title>
 </head>
 <body>
     <h1>Actualizar Tipo Usuarios</h1>
-<br><br>
+
+    <div class="ActualizarUsuarios">
         <form action="/MainSiteAdmin/Usuarios/actualizar/{{id}}" method="POST">
             Nombre de usuario: <br>
             <input type="text" name="user" id="user" value="{{data[0][2]}}">
@@ -50,5 +52,6 @@
             <input type="hidden" name = "id" id="id" value="{{id}}">
             <input type="submit" value="Actualizar">
         </form>
+    </div>
 </body>
 </html>

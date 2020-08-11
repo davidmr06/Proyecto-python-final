@@ -3,86 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link href="/static/css/CreateUserForm.css" rel="stylesheet">-->
+    <link href="/static/css/CreateUserForm.css" rel="stylesheet"> 
     <title>Create user</title>
-    <style>
-        body{
-            perspective:800px;
-            height: 100vh;
-            margin:0;
-            overflow: hidden;
-            font-family: 'Gudea', sans-serif;
-            background: rgb(44, 99, 201) ; 
-            background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, gold 100%); /* FF3.6+ */
-          background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(44, 99, 201) ), color-stop(100%,gold)); /* Chrome,Safari4+ */
-          background: -webkit-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Chrome10+,Safari5.1+ */
-          background: -o-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Opera 11.10+ */
-          background: -ms-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* IE10+ */
-          background: linear-gradient(135deg,  rgb(44, 99, 201)  0%,gold 100%); /* W3C */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 201) ', endColorstr='gold',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        } 
-        
-        ::-webkit-input-placeholder {
-        color: #4E546D
-        }
-        .UserForm{
-        opacity:1;
-        top:0px;
-        -webkit-transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, .85);
-        transition-property:transform,opacity,box-shadow,top,left;
-        transition-duration:.5s;
-        transform-origin:161px 100%;
-        transform:rotateX(0deg);
-        background-color: #5B5E6F;
-        width: 20px;
-        margin: 200px 200px ;
-        width:400px;
-        height:400px;
-        top:110px;
-        bottom:110px;
-        left:0;
-        right:0;
-        color: black;
-        float:left;
-        position:absolute;
-        margin:auto;
-        border-top: 2px solid rgb(44, 99, 201);
-        border-bottom: 2px solid gold;
-        border-left: 2px solid gold;
-        border-right: 2px solid rgb(44, 99, 201);
-        padding:200px 100px 100px 40px;
-        background: #616881; /* trustable Old browsers loool */
-        background: -moz-linear-gradient(45deg,  #616881 0%, #1f222e 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#616881), color-stop(100%,#1f222e)); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* IE10+ */
-        background: linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='616881', endColorstr='#1f222e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        } /*35394a*/
-
-        h1{
-            text-align:center;
-            top:-100px;
-            /*text-orientation: upright;*/
-        color:rgba(186, 181, 212, 0.993);
-        font-weight:lighter;
-        font-size:45px;
-        /*font-variant-position:super;
-        font-family: 'Montserrat', sans-serif;*/
-
-        }
-    </style>
-
-  
     <body>
         
         <div class="UserForm">
             <h1>Crear usuario</h1>
             <form action="/loginform/createuser" method="POST">
-            <div class="NombreUsuario"></div>
-                Nombre de usuario: <br>
-            </div>
+                <div class="NombreUsuario">
+                    Nombre de usuario: <br>
+                </div>
             <input type="text" name="user" id="user">
             <div class="Name">
             <br><br>
@@ -100,8 +30,8 @@
         <input type="text" name="correo" id="correo">
         <br><br>
         Carnet: <br>
-        <input type="text" name="carnet" id="carnet" placeholder="Si es profesor, ignorar">
-        <br><br>
+        <input type="text" name="carnet" id="carnet"  >
+        <br><br> <!--placeholder="Ingrese carnet"-->
         Carrera: <br>
         <select name="carrera" id="carrera">
             <option value="ING"> Ingenieria de Negocios</option>

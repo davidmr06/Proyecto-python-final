@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/ActualizarMateria.css" rel="stylesheet">
     <title>Actualizar Materia</title>
 </head>
 <body>
     <h1>Actualizar Materia</h1>
 <br><br>
+    <div class="ActualizarMateria">
         <form action="/MainSiteAdmin/materias/actualizar/{{id}}" method="POST">
             Materia: <br>
             <input type="text" name="materia" id="materia" value="{{data[0][1]}}"> 
@@ -18,5 +20,6 @@
             <input type="hidden" name = "id" id="id" value="{{id}}">
             <input type="submit" value="Actualizar">
         </form>
+    </div>
 </body>
 </html>
