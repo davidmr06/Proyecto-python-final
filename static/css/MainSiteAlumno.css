@@ -5,7 +5,7 @@ body{
 perspective:800px;
 height: 100vh;
 margin:0;
-overflow: hidden;
+overflow: scroll;
 font-family: 'Gudea', sans-serif;
 background: rgb(44, 99, 201) ; 
 background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, gold 100%); /* FF3.6+ */
@@ -22,6 +22,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 2
 font-size: small;
 text-align: center;
 font-family: 'Montserrat', sans-serif;
+background-attachment: scroll;
 }
 h1{
 font-size: xx-large;

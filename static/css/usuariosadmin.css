@@ -1,0 +1,26 @@
+body{
+    perspective:800px;
+    height: 100vh;
+    margin:0;
+    font-family: 'Gudea', sans-serif;
+    background: rgb(44, 99, 201) ; 
+    background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, gold 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(44, 99, 201) ), color-stop(100%,gold)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* IE10+ */
+    background: linear-gradient(135deg,  rgb(44, 99, 201)  0%,gold 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 201) ', endColorstr='gold',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+
+    h1{
+        font-size: xx-large;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        }
+
+    p {
+        font-size: x-large;
+        font-family: 'Montserrat', sans-serif;
+
+    }

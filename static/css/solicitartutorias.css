@@ -1,0 +1,85 @@
+body{
+    perspective:800px;
+    height: 100vh;
+    margin:0;
+    font-family: 'Gudea', sans-serif;
+    background: rgb(44, 99, 201) ; 
+    background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, gold 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgb(44, 99, 201) ), color-stop(100%,gold)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  rgb(44, 99, 201)  0%,gold 100%); /* IE10+ */
+    background: linear-gradient(135deg,  rgb(44, 99, 201)  0%,gold 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 201) ', endColorstr='gold',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+
+    h1{
+        font-size: xx-large;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        }
+    
+    /*------------------*/
+
+    .box {
+        text-align: center;
+      }
+      
+      .box select {
+        background: rgb(50, 54, 74);
+        color: gold;
+        padding: 12px;
+        width: 250px;
+        border: none;
+        font-size: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+      }
+      
+      .box::before {
+        font-family: FontAwesome;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+      }
+      
+      .box:hover::before {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      .box select option {
+        padding: 30px;
+      }
+
+      input[type='date'],input[type='time'],input[type='number']{
+        color: gold;
+        width: 190px;
+        background: rgb(50, 54, 74);
+        padding: 10px 10px;
+        outline: none;
+        font-family: 'Montserrat', sans-serif;
+      }
+      input[type='submit']{
+        /*Para que se vea bien */
+        border-radius:50px;
+        background:#616881;
+        padding:10px 50px;
+        border:2px solid gold ;
+        color: gold ;
+        text-transform:uppercase;
+        font-size:11px;
+        transition-property:background,color;
+        transition-duration:.2s;
+
+      }
