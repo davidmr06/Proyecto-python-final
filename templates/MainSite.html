@@ -11,18 +11,33 @@
         <title>Main Site</title>
         <h1>Pagina Principal</h1>
         <p>Estas loggeado como {{userdata}} </p>
+        <div class="Logout">
+            <a href="/">Cerrar Sesión</a>
+        </div>    
         <br><br>
-        <a href="/">Cerrar Sesión</a>
-        <br><br>
-        <a href="/MainSite/Mistutorias"> Ver estado tutorias</a>
-        <br><br>
-        <a href="/MainSite/TutoriasFinalizadas">Calificar tutoría</a>
-        <br><br>
-        <a href="/MainSite/Ingenieria"> <img src="{{url_for("static",filename="img/IDN.png")}}" ></a> 
-        <br><br> 
-        <a href="/MainSite/Economia"> <img src="{{url_for("static",filename="img/LEN.png")}}" ></a>
-        <br><br>
-        <a href="/MainSite/Derecho"> <img src="{{url_for("static",filename="img/LCJ.png")}}"  ></a>
+        <div  class="botones">
+            <a href="/MainSite/Mistutorias"> Ver estado tutorias</a>
+        </div>    
+        <br><br><br>
+        <div class="botones">
+            <a href="/MainSite/TutoriasFinalizadas">Calificar tutoría</a>
+        </div>    
+        <br><br><br>
+
+        <div class="row">
+            <div class="column">
+                <a href="/MainSite/Ingenieria"> <img src="{{url_for("static",filename="img/IDN.png")}}" width="249" height="323"></a> 
+            </div>
+
+            <div class="column">
+                <a href="/MainSite/Economia"> <img src="{{url_for("static",filename="img/LEN.png")}}" width="249" height="323" ></a>
+            </div>
+
+            <div class="column">
+                <a href="/MainSite/Derecho"> <img src="{{url_for("static",filename="img/LCJ.png")}}" width="259" height="333" ></a>
+            </div>    
+        </div>
+        
     </div>
 </body>
 </html>

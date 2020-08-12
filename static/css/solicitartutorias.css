@@ -81,5 +81,22 @@ body{
         font-size:11px;
         transition-property:background,color;
         transition-duration:.2s;
-
       }
+
+a {
+  border-radius:25px;
+  background:#616881;
+  padding:10px 30px;
+  border:2px solid gold ;
+  color: gold ;
+  text-transform:uppercase;
+  font-size:11px;
+  transition-property:background,color;
+  transition-duration:.2s;
+  text-decoration: none;
+
+}
+a:hover {
+  background-color: gold;
+  color: white;
+}
