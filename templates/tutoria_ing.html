@@ -3,37 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/solicitartutorias.css" rel="stylesheet">
     <title>Tutoria Ingeniería</title>
-    <h1>Pedir tutoria</h1> 
+
 </head>
 <body>
-    <form action="/MainSite/Ingenieria/tutoria" method="POST">
-        Tutor: <br><br>
-        <select name="tutor" id="tutor">
-            {% for tutores in datatutores %}
-            <option value="{{tutores[0]}}">{{tutores[1]}} {{tutores[2]}} </option>
-            {% endfor %}
-        </select>
-        <br><br>
-        Materia: <br><br>
-        <select name="materia" id="materia">
-            {% for materia in Materias %}
-            <option value="{{materia[0]}}">{{materia[1]}}</option>
-            {% endfor %}
-        </select>
-        <br><br>
-        Fecha: <br><br>
-        <input type="date" name="fecha" id="fecha">
-        <br><br>
-        Hora: <br><br>
-        <input type="time" name="hora" id="hora">
-        <br><br>
-        Precio: <br><br>
-        <input type="number" name="precio" id="precio">
-        <br><br>
-        <input type="submit" value="Solicitar">
-        <br><br>
-        <a href="/MainSite/Ingenieria">Regresar a los tutores</a>
-    </form>
+        <div class="form">
+            <div class="form_title">
+                <h1>Solicitar tutoria</h1> 
+            </div>
+            <form action="/MainSite/Ingenieria/tutoria" method="POST">
+                <center>Tutor:</center> 
+                <div class="box">
+                    <select name="tutor" id="tutor">
+                        {% for tutores in datatutores %}
+                        <option value="{{tutores[0]}}">{{tutores[1]}} {{tutores[2]}} </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br><br>
+                <center> Materia:</center>
+                <div class="box">
+                    <select name="materia" id="materia">
+                        {% for materia in Materias %}
+                        <option value="{{materia[0]}}">{{materia[1]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br><br>
+                <center> Fecha:</center> 
+                <div class="box">
+                    <input type="date" name="fecha" id="fecha">
+                </div> 
+                    <br><br>
+                <center> Hora:</center> 
+                <div class="box">
+                    <input type="time" name="hora" id="hora" >
+                </div>   
+                <br>
+                <center> Precio:</center>
+                <div class="box">
+                    <input type="number" name="precio" id="precio">
+                </div>    
+                <br><br>
+                <div class="box">
+                    <input type="submit" value="Solicitar">
+                </div>    
+                <br><br>
+                <div class="box">
+                <a href="/MainSite/Ingenieria">Regresar a los tutores</a>
+                <br><br><br>
+                </div>
+            </form>
+        </div>    
 </body>
 </html>
