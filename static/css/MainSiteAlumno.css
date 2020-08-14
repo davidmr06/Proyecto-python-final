@@ -49,7 +49,6 @@ font-family: 'Montserrat', sans-serif;
     transition-property:background,color;
     transition-duration:.2s;
 }
- 
 .Logout:hover {
   background-color: gold;
   color: white;

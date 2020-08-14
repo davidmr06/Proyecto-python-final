@@ -19,12 +19,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 2
 }
 
 .Derecho{
-font-size: small;
-text-align: center;
-font-family: 'Montserrat', sans-serif;
-}
-h1{
-font-size: xx-large;
-text-align: center;
-font-family: 'Montserrat', sans-serif;
-}
+    font-size: small;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    }
+    h1{
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    }
+    a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    }
+    .btn {
+        border: 2px solid black;
+        background-color: black;
+        color: gold;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 200px;
+        align-self: center;
+        margin: auto;
+    }
+    .success {
+        border-color: gold;
+        color: gold;
+    }
+    .success:hover {
+        background-color: gold;
+        color: white;
+    }
+    p{
+        color: #1E2831;
+        font-size: 20px;
+        font-weight: bold;
+    }
