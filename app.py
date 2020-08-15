@@ -304,7 +304,7 @@ def VerMisSolicitudes():
         id = request.form["id"]
         Estado = request.form["Estado"]
         database.ActualizarEstadoTutoria(id,Estado)
-        return redirect("/MainSite/TutoriasSolicitadas")
+        return redirect("/MainSiteTutor/TutoriasSolicitadas")
 
 @app.route("/MainSiteAdmin/TutoriasSolicitadas",methods=['GET','POST'])
 def TodasSolicitudes():
