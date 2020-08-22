@@ -5,7 +5,7 @@ body{
 perspective:800px;
 height: 100vh;
 margin:0;
-overflow: hidden;
+
 font-family: 'Gudea', sans-serif;
 background: rgb(44, 99, 201) ; 
 background: -moz-linear-gradient(-45deg,  rgb(44, 99, 201)  0%, gold 100%); /* FF3.6+ */
@@ -29,6 +29,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 2
     font-size: xx-large;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+
+    
     }
     a{
     text-decoration: none;
@@ -60,3 +62,64 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(44, 99, 2
         font-size: 20px;
         font-weight: bold;
     }
+
+.container {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 75%;
+    left: 50%;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #5B5E6F;
+    border-top: 2px solid rgb(44, 99, 201);
+    border-bottom: 2px solid gold;
+    border-left: 2px solid gold;
+    border-right: 2px solid rgb(44, 99, 201);
+    box-shadow: 0px 12px 24px -9px rgba(0,0,0,0.75);
+    border-radius: 3px;
+    padding: 30px 20px;
+    width: 800px;
+    height: 320px;
+    position: relative;
+    left: 220px;
+}
+
+.img-container {
+
+    width: 100px;
+    text-align: center;
+}
+
+.img-container img {
+    width: 200px;
+  
+}
+
+.text-container {
+    width: 700px;
+    margin-left: 20px;
+}
+
+.text-container h1 {
+    font-size: 20px;
+    font-weight: normal ;
+    letter-spacing: 2px;
+    color: gold;
+}
+
+.text-container h2, h3,h4,h5 {
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgba(186, 181, 212, 0.993);
+    margin-top: 5px;
+}
+
+.text-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+}
