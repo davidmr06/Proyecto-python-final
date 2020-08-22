@@ -25,40 +25,45 @@
 </head>
 <body>
     <h1>Valoración tutorías</h1>
-    <a href="/MainSiteUser">Volver a la pagina principal</a>
+    <center><a href="/MainSiteUser">Volver a la pagina principal</a></center>
         <br><br>
-        <form action="/MainSite/TutoriasFinalizadas" method="POST">
-          Número de tutoría: <br><br>
-          <input type="number" name="id" id="id" min="0" max="100">
-          <br><br>
-          Calificación:<br><br>
-          <input type="number" name="calificacion" id="calificacion" min="0" max="10">  
-          <br><br>
-          <input type="submit" value="Enviar">
-        </form>
+        <div class="form">
+            <form action="/MainSite/TutoriasFinalizadas" method="POST">
+              Número de tutoría: <br><br>
+              <input type="number" name="id" id="id" min="0" max="100">
+              <br><br>
+              Calificación:<br><br>
+              <input type="number" name="calificacion" id="calificacion" min="0" max="10">  
+              <br><br>
+              <input type="submit" value="Enviar">
+            </form>
+        </div>    
         <br><br>
-        <table style="width: 20%">
-            <tr>
-              <th>Número de tutoria</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Materia</th>
-              <th>Fecha</th>
-              <th>Hora</th>
-              <th>Precio</th>
-              <th>Valoración</th>
-            </tr>
-            {% for inf in Informacion %}
-            <tr>
-              <td>{{inf[0]}}</td>
-              <td>{{inf[1]}}</td>
-              <td>{{inf[2]}}</td>
-              <td>{{inf[3]}}</td>
-              <td>{{inf[4]}}</td>
-              <td>{{inf[5]}}</td>
-              <td>${{inf[6]}}</td>
-              <td>{{inf[7]}}</td>
-            </tr>
-            {% endfor %}
-          </table>
-          
+          <div class="tabla">
+                <table style="width: 20%">
+                    <tr>
+                      <th>Número de tutoria</th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Materia</th>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      <th>Precio</th>
+                      <th>Valoración</th>
+                    </tr>
+                    {% for inf in Informacion %}
+                    <tr>
+                      <td>{{inf[0]}}</td>
+                      <td>{{inf[1]}}</td>
+                      <td>{{inf[2]}}</td>
+                      <td>{{inf[3]}}</td>
+                      <td>{{inf[4]}}</td>
+                      <td>{{inf[5]}}</td>
+                      <td>${{inf[6]}}</td>
+                      <td>{{inf[7]}}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+           </div>
+           <br><br>
+</body>    
