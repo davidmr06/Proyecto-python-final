@@ -9,17 +9,19 @@
 <body>
     <h1>Actualizar Materia</h1>
 <br><br>
-    <div class="ActualizarMateria">
-        <form action="/MainSiteAdmin/materias/actualizar/{{id}}" method="POST">
-            Materia: <br>
-            <input type="text" name="materia" id="materia" value="{{data[0][1]}}"> 
-            <br><br>
-            Carrera: <br>
-            <input type="text" name="carrera" id="carrera" value="{{data[0][2]}}">
-            <br><br>
-            <input type="hidden" name = "id" id="id" value="{{id}}">
-            <input type="submit" value="Actualizar">
-        </form>
+    <div class="UserForm">
+        <div class="form">
+            <form action="/MainSiteAdmin/materias/actualizar/{{id}}" method="POST">
+                Materia: <br>
+                <input type="text" name="materia" id="materia" value="{{data[0][1]}}"> 
+                <br><br>
+                Carrera: <br>
+                <input type="text" name="carrera" id="carrera" value="{{data[0][2]}}">
+                <br><br>
+                <input type="hidden" name = "id" id="id" value="{{id}}">
+                <input type="submit" value="Actualizar">
+            </form>
+        </div>
     </div>
 </body>
 </html>

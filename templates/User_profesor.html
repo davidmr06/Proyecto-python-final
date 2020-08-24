@@ -4,40 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/static/css/createprofesor.css" rel="stylesheet">
-    <title>Create user</title>
-
-    <h1>Crear usuario del profesor</h1>
-
-    <form action="/MainSiteAdmin/CrearUsuarioProfesor" method="POST">
-        Nombre de usuario: <br>
-        <input type="text" name="user" id="user">
-        <br><br>
-        Nombre: <br>
-        <input type="text" name="nombre" id="nombre">
-        <br><br>
-        Apellido: <br>
-        <input type="text" name="apellido" id="apellido">
-        <br><br>
-        Password: <br>
-        <input type="password" name="password" id="password">
-        <br><br>
-        Correo: <br>
-        <input type="text" name="correo" id="correo">
-        <br><br>
-        Carrera: <br>
-        <select name="carrera" id="carrera">
-            <option value="ING"> Ingenieria de Negocios</option>
-            <option value="DER">Derecho</option>
-            <option value="ECO">Economia</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Crear usuario">
-        <br><br>
-        <a href="/MainSiteAdmin">Volver al inicio</a>
-    </form>
-
-</head>
+    <title>Crear Profesor</title>
 <body>
+    <h1>Crear usuario del profesor</h1>
+    <div class="UserForm">
+        <div class="form">
+            <form action="/MainSiteAdmin/CrearUsuarioProfesor" method="POST">
+                    Nombre de usuario: <br>
+                    <input type="text" name="user" id="user">
+                    <br><br>
+                    Nombre: <br>
+                    <input type="text" name="nombre" id="nombre">
+                    <br><br>
+                    Apellido: <br>
+                    <input type="text" name="apellido" id="apellido">
+                    <br><br>
+                    Password: <br>
+                    <input type="password" name="password" id="password">
+                    <br><br>
+                    Correo: <br>
+                    <input type="text" name="correo" id="correo">
+                    <br><br>
+                    Carrera: <br>
+                    <div class="box">
+                        <select name="carrera" id="carrera">
+                            <option value="ING"> Ingenieria de Negocios</option>
+                            <option value="DER">Derecho</option>
+                            <option value="ECO">Economia</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <input type="submit" value="Crear usuario">
+                    <br><br>
+            </form>
+        </div>
+    </div>
+    <div class="back">
+        <center><a href="/MainSiteAdmin">Volver al inicio</a></center>
+     </div>   
+</head>
+
     
 </body>
 </html>

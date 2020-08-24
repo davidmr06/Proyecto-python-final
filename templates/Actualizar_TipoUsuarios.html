@@ -10,13 +10,15 @@
     <div class="ActualizarTiposUsuarios">
     <h1>Actualizar Tipo Usuarios</h1>
 <br><br>
-        <form action="/MainSiteAdmin/TiposUsuarios/actualizar/{{id}}" method="POST">
-            Materia: <br>
-            <input type="text" name="TipoUser" id="TipoUser" value="{{data[0][1]}}"> 
-            <br><br>
-            <input type="hidden" name = "id" id="id" value="{{id}}">
-            <input type="submit" value="Actualizar">
-        </form>
+        <div class="form">
+            <form action="/MainSiteAdmin/TiposUsuarios/actualizar/{{id}}" method="POST">
+                Tipo de Usuario: <br>
+                <input type="text" name="TipoUser" id="TipoUser" value="{{data[0][1]}}"> 
+                <br><br>
+                <input type="hidden" name = "id" id="id" value="{{id}}">
+                <input type="submit" value="Actualizar">
+            </form>
+        </div>    
     </div>
 </body>
 </html>

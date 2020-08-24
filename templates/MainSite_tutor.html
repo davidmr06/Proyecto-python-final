@@ -6,17 +6,22 @@
     <link href="/static/css/MainSiteTutor.css" rel="stylesheet"> 
     <div class="MainSite">
     <title>Tutor</title>
-    <h1>Tutores</h1>
-    <p>estas loggeado como {{userdata}} </p>
+ </head>   
+ <body>
+    <h1>Página principal de los Tutores</h1>
+    <p>Estas loggeado como {{userdata}} </p>
     <br><br>
-    <a href="/">Cerrar Sesión</a>
+    <div class="logout">
+        <a href="/">Cerrar Sesión</a>
+    </div>
     <br><br>
-    <a href="/MainSiteTutor/TutoriasSolicitadas">Ver tutorias solicitadas</a>
+    <div class="btn success">
+        <a href="/MainSiteTutor/TutoriasSolicitadas">Ver tutorias solicitadas</a>
+    </div>
     <br><br>
-    <a href="/MainSiteTutor/ValoracionTutorias">Ver mis tutorias calificadas</a>
-</div>
-</head>
-<body>
-    
+    <div class="btn success">
+     <a href="/MainSiteTutor/ValoracionTutorias">Ver mis tutorias calificadas</a>
+    </div> 
+</div> 
 </body>
 </html>

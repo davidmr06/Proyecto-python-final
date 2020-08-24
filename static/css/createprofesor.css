@@ -18,3 +18,129 @@ body{
         text-align: center;
         font-family: 'Montserrat', sans-serif;
         }
+
+        .UserForm{
+            font-size: small;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+    
+        .form {
+            opacity:1;
+            top:0px;
+            -webkit-transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, .85);
+            transition-property:transform,opacity,box-shadow,top,left;
+            transition-duration:.5s;
+            transform-origin:161px 100%;
+            transform:rotateX(0deg);
+            background-color: #5B5E6F;
+            width: 20px;
+            margin: 200px 200px ;
+            width:350px;
+            height:470px;
+            top:100px;
+            bottom:0px;
+            left:0;
+            right:0;
+            color: black;
+            float:left;
+            position:absolute;
+            margin:auto;
+            border-top: 2px solid rgb(44, 99, 201);
+            border-bottom: 2px solid gold;
+            border-left: 2px solid gold;
+            border-right: 2px solid rgb(44, 99, 201);
+            padding: 10px 40px 10px 40px;
+            background: #616881; /* trustable Old browsers loool */
+            background: -moz-linear-gradient(45deg,  #616881 0%, #1f222e 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#616881), color-stop(100%,#1f222e)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* IE10+ */
+            background: linear-gradient(45deg,  #616881 0%,#1f222e 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='616881', endColorstr='#1f222e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+    } 
+
+    input[type='submit']{
+        /*Para que se vea bien */
+        border-radius:50px;
+        background:#616881;
+        padding:10px 50px;
+        border:2px solid gold ;
+        color: gold ;
+        text-transform:uppercase;
+        font-size:11px;
+        transition-property:background,color;
+        transition-duration:.2s;
+      }
+        /*Para que se vea bien */
+      input[type='text'], input[type='password']{
+        color: goldenrod;
+        width: 190px;
+        background: rgb(50, 54, 74);
+        padding: 10px 10px;
+        outline: none;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .box select {
+        background: rgb(50, 54, 74);
+        color: goldenrod;
+        padding:  10px 10px ;
+        width: 205px;
+        border: none;
+        font-size: 14px;
+        box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+      }
+      
+      .box::before {
+        font-family: 'Montserrat', sans-serif;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+      }
+      
+      .box:hover::before {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      .box select option {
+        padding: 30px;
+      }
+
+      .back a {
+        border-radius:25px;
+        background:#616881;
+        padding:10px 30px;
+        border:2px solid gold ;
+        color: gold ;
+        text-transform:uppercase;
+        font-size:11px;
+        transition-property:background,color;
+        transition-duration:.2s;
+        text-decoration: none;
+    }
+    
+    .back a:hover {
+        background-color: goldenrod;
+        color: white;
+    }
+    
+    .centralize {
+        margin-top: 680px;
+        margin-left: 100px;
+    
+    }

@@ -25,80 +25,90 @@
 </head>
 <body>
     <h1>Usuarios Registrados</h1>
-    <p>Insertar Usuario</p>
-    <a href="/MainSiteAdmin">Volver al inicio</a>
+    <center><p>Insertar Usuario</p></center>
+    <div class="back">
+       <center><a href="/MainSiteAdmin">Volver al inicio</a></center>
+    </div> 
     <br><br>
-        <form action="/MainSiteAdmin/Usuarios" method="POST">
-          Nombre de usuario: <br>
-          <input type="text" name="user" id="user">
-          <br><br>
-          Nombre: <br>
-          <input type="text" name="nombre" id="nombre">
-          <br><br>
-          Apellido: <br>
-          <input type="text" name="apellido" id="apellido">
-          <br><br>
-          password: <br>
-          <input type="password" name="password" id="password">
-          <br><br>
-          correo: <br>
-          <input type="text" name="correo" id="correo">
-          <br><br>
-          carnet: <br>
-          <input type="text" name="carnet" id="carnet">
-          <br><br>
-          Carrera: <br>
-          <select name="carrera" id="carrera">
-              <option value="ING"> Ingenieria de Negocios</option>
-              <option value="DER">Derecho</option>
-              <option value="ECO">Economia</option>
-          </select>
-          <br><br>
-          Año: <br>
-          <select name="anio" id="anio">
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="">-</option>
-          </select>
-           <br><br>
-           Tipo: <br>
-           <select name="rol" id="rol">
-              <option value="2">Tutor</option>
-              <option value="3">Tutorado</option>
-          </select>
-          <br><br>
-          <input type="submit" value="Agregar usuario">
-        </form>
-        <br><br>
-        <table style="width: 20%">
-            <tr>
-              <th>Carnet</th>
-              <th>Usuario</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Password</th>
-              <th>Correo</th>
-              <th>Carrera</th>
-              <th>Año</th>
-            </tr>
-            {% for user in Usuarios %}
-            <tr>
-              <td>{{user[1]}}</td>
-              <td>{{user[2]}}</td>
-              <td>{{user[3]}}</td>
-              <td>{{user[4]}}</td>
-              <td>{{user[5]}}</td>
-              <td>{{user[6]}}</td>
-              <td>{{user[7]}}</td>
-              <td>{{user[8]}}</td>
-              <td> <a href="/MainSiteAdmin/Usuarios/actualizar/{{user[0]}}">Actualizar</a></td>
-              <td><a href="/MainSiteAdmin/Usuarios/borrar/{{user[0]}}">Borrar</a></td>
-            </tr>
-            {% endfor %}
-          </table>
-          
-
-
-
+        <div class="UserForm">
+              <div class="form">
+                  <form action="/MainSiteAdmin/Usuarios" method="POST">
+                    Nombre de usuario: <br>
+                    <input type="text" name="user" id="user">
+                    <br><br>
+                    Nombre: <br>
+                    <input type="text" name="nombre" id="nombre">
+                    <br><br>
+                    Apellido: <br>
+                    <input type="text" name="apellido" id="apellido">
+                    <br><br>
+                    password: <br>
+                    <input type="password" name="password" id="password">
+                    <br><br>
+                    Correo: <br>
+                    <input type="text" name="correo" id="correo">
+                    <br><br>
+                    Carnet: <br>
+                    <input type="text" name="carnet" id="carnet">
+                    <br><br>
+                    Carrera: <br>
+                    <div class="box">
+                      <select name="carrera" id="carrera">
+                          <option value="ING"> Ingenieria de Negocios</option>
+                          <option value="DER">Derecho</option>
+                          <option value="ECO">Economia</option>
+                      </select>
+                    </div>
+                    <br><br>
+                    Año: <br>
+                    <div class="box">
+                        <select name="anio" id="anio">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="">-</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    Tipo: <br>
+                    <div class="box">
+                    <select name="rol" id="rol">
+                        <option value="2">Tutor</option>
+                        <option value="3">Tutorado</option>
+                    </select>
+                    </div>
+                    <br><br>
+                    <input type="submit" value="Agregar usuario">
+                  </form>
+              </div>    
+        </div>
+            <br><br>
+              <div class="centralize">
+                <table style="width: 20%">
+                    <tr>
+                      <th>Carnet</th>
+                      <th>Usuario</th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Password</th>
+                      <th>Correo</th>
+                      <th>Carrera</th>
+                      <th>Año</th>
+                    </tr>
+                    {% for user in Usuarios %}
+                    <tr>
+                      <td>{{user[1]}}</td>
+                      <td>{{user[2]}}</td>
+                      <td>{{user[3]}}</td>
+                      <td>{{user[4]}}</td>
+                      <td>{{user[5]}}</td>
+                      <td>{{user[6]}}</td>
+                      <td>{{user[7]}}</td>
+                      <td>{{user[8]}}</td>
+                      <td> <a href="/MainSiteAdmin/Usuarios/actualizar/{{user[0]}}">Actualizar</a></td>
+                      <td><a href="/MainSiteAdmin/Usuarios/borrar/{{user[0]}}">Borrar</a></td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+              </div>
 </body>
 </html>

@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/static/css/MainSiteAdmin.css" rel="stylesheet"> 
     <title>admin</title>
-    <h1>Admin</h1>
-    <p>estas loggeado como {{userdata}} </p>
+    <h1>Pagina del administrador</h1>
+    <p>Estas loggeado como {{userdata}} </p>
 </head>
 
 <body>
     <div class="MainSite">
     <br><br>
-    <a href="/">Cerrar Sesión</a>
+    <div class="logout">
+       <a href="/">Cerrar Sesión</a>
+    </div>
+
+    <div class="btn success">
+        <a href="/MainSiteAdmin/Usuarios">Ver Usuarios</a>
+    </div>
     <br><br>
+    <div class="btn success">
+        <a href="/MainSiteAdmin/TiposUsuarios">Ver tipos de usuarios</a>
+    </div>
     <br><br>
-    <a href="/MainSiteAdmin/Usuarios">Ver Usuarios</a>
+    <div class="btn success">
+        <a href="/MainSiteAdmin/materias">Ver materias disponibles</a>
+    </div>   
     <br><br>
-    <a href="/MainSiteAdmin/TiposUsuarios">Ver tipos de usuarios</a>
-    <br><br>
-    <a href="/MainSiteAdmin/materias">Ver materias disponibles</a>
-    <br><br>
-    <a href="/MainSiteAdmin/CrearUsuarioProfesor">Crear Usuario Profesor</a>
-    <br><br>    
-    <a href="/MainSiteAdmin/TutoriasSolicitadas">Ver Todas Solicitudes</a>
+    <div class="btn success"> 
+        <a href="/MainSiteAdmin/CrearUsuarioProfesor">Crear Usuario Profesor</a>
+    </div>
+    <br><br>  
+    <div class="btn success">
+        <a href="/MainSiteAdmin/TutoriasSolicitadas">Ver Todas Solicitudes</a>
+    </div>    
 </div>
 </body>
 </html>

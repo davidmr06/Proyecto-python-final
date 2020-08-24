@@ -24,33 +24,39 @@
         </style>
 </head>
 <body>
-    <h1>Tipos de Usuarios</h1>
-    <p>Insertar Usuario</p>
-    <br>
-    <a href="/MainSiteAdmin">Volver al inicio</a>
-    <br><br>
-        <form action="/MainSiteAdmin/TiposUsuarios" method="POST">
-            Tipo de Usuario: <br>
-            <input type="text" name="tipouser" id="tipouser">
-            <br><br>
-            <input type="submit" value="Agregar">
-        </form>
+
+        <h1>Tipos de Usuarios</h1>
+        <p>Insertar Usuario</p>
         <br>
-        <table style="width: 20%">
-            <tr>
-              <th>Tipo Usuario</th>
-            </tr>
-            {% for user in TipoUsuarios %}
-            <tr>
-              <td>{{user[1]}}</td>
-              <td> <a href="/MainSiteAdmin/TiposUsuarios/actualizar/{{user[0]}}">Actualizar</a></td>
-              <td><a href="/MainSiteAdmin/TiposUsuarios/borrar/{{user[0]}}">Borrar</a></td>
-            </tr>
-            {% endfor %}
-          </table>
-          
-
-
+        <div class="back">
+           <center><a href="/MainSiteAdmin">Volver al inicio</a></center>
+        </div>
+        <br><br>
+    <div class="UserForm">
+        <div class="form">
+              <form action="/MainSiteAdmin/TiposUsuarios" method="POST">
+                  Tipo de Usuario: <br>
+                  <input type="text" name="tipouser" id="tipouser">
+                  <br><br>
+                  <input type="submit" value="Agregar">
+              </form>
+        </div>
+    </div>          
+        <br>
+        <div class="centralize">
+          <table style="width: 20%">
+              <tr>
+                <th>Tipo Usuario</th>
+              </tr>
+              {% for user in TipoUsuarios %}
+              <tr>
+                <td>{{user[1]}}</td>
+                <td> <a href="/MainSiteAdmin/TiposUsuarios/actualizar/{{user[0]}}">Actualizar</a></td>
+                <td><a href="/MainSiteAdmin/TiposUsuarios/borrar/{{user[0]}}">Borrar</a></td>
+              </tr>
+              {% endfor %}
+            </table>
+        </div> 
 
 </body>
 </html>
