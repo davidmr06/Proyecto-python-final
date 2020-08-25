@@ -7,17 +7,51 @@
     <title>Economia</title>
 </head>
 <body>
-    <div class="Eco">
-    <h1>Pagina de Economía</h1>
+<div class="Eco">
+    <h1>Tutores de Economía</h1>
     <div class="btn success">
-        <a href="/MainSiteUser">Volver al inicio</a>
+        <a href="/MainSiteUser">Regresar al inicio</a>
     </div>
     <br><br>
     <div class="btn success">
         <a href="/MainSite/Economia/tutoria">Solicitar tutoria</a>
     </div>
     <br><br>
-    <p>Todos los tutores</p>
+    <div class="profile-card">
+        <div class="img-container">
+            <img src="{{url_for("static",filename="img/ever.jpg")}}" alt="Sheldon">
+        </div>
+            <div class="text-container">
+                <h1>Everardo Rivera</h1>
+                <h2>Materias</h2>
+                <p>Ciencias Políticas, Economía Internacional</p>
+                <h3>Me gusta enseñar porque:</h3>
+                <p>Todos deberiamos saber un poco de Economía</p>
+                <h4>Formación</h4>
+                <p>Graduado de la ESEN y master en Políticas Públicas</p>
+                <h5>Hobbie:</h5>
+                <p>Leer, enseñar y correr por las noches</p>
+            </div>
     </div>
+        <br><br>
+        <div class="profile-card">
+            <div class="img-container">
+                <img src="{{url_for("static",filename="img/caro.jpg")}}" alt="Sheldon">
+            </div>
+            <div class="text-container">
+                <h1>Carolina Sandoval</h1>
+                <h2>Materias</h2>
+                <p>Macroeconomía I, II</p>
+                <h3>Me gusta enseñar porque:</h3>
+                <p>Todos tenemos dificultades, me gusta ayudar a disminuirlas</p>
+                <h4>Formación</h4>
+                <p>Ayudante de Macroeconomía</p>
+                <h5>Hobbie:</h5>
+                <p>Leer y pasar tiempo con los amigos</p>
+            </div>
+            <br><br>
+        </div>
+    <br><br>
+</div>
 </body>
 </html>
