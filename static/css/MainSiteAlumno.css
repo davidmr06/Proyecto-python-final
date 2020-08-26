@@ -95,3 +95,8 @@ a:visited {
   display: table;
   clear: both;
 }
+
+img:hover {
+transform: scale(1.2);
+box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
