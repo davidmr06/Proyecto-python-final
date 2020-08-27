@@ -242,7 +242,8 @@ def Usuarios():
         carrera = request.form["carrera"]
         anio = request.form["anio"]
         tipo = request.form["rol"]
-        rows =  database.InsertUser(carnet,user,name,apellido,password,correo,carrera,anio,tipo)       
+        rows = database.InsertUser(carnet, user, name, apellido, password, correo, carrera, anio, tipo)
+        print(rows)
         return redirect("/MainSiteAdmin/Usuarios")
 
 @app.route("/MainSiteAdmin/Usuarios/actualizar/<int:id>", methods=["GET", "POST"])
@@ -262,7 +263,8 @@ def ActualizarUsuario(id):
         NewCarrera= request.form["carrera"]
         NewAnio= request.form["anio"]
         NewTipo= request.form["rol"]
-        database.ActualizarUser(id,NewCarnet,NewUser,NewNombre,NewApellido,Newpassword,NewCorreo,NewCarrera,NewAnio,NewTipo)
+        database.ActualizarUser(id, NewCarnet, NewUser, NewNombre, NewApellido, Newpassword, NewCorreo, NewCarrera, NewAnio, NewTipo)
+        print(Newid)
         return redirect("/MainSiteAdmin/Usuarios")
 
 @app.route("/MainSiteAdmin/Usuarios/borrar/<int:id>", methods=["GET"])
