@@ -100,3 +100,17 @@ img:hover {
 transform: scale(1.2);
 box-shadow: 0 25px 40px rgba(0,0,0,.5);
 }
+
+.franja {
+  padding-top: 1px;
+  padding-bottom: 0px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+
+}

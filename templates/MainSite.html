@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/css/MainSiteAlumno.css" rel="stylesheet"> 
+    <link href="/static/css/MainSiteAlumno.css" rel="stylesheet">
 </head>
+
 <body>
 
     <div class="MainSite">
@@ -13,31 +15,33 @@
         <p>Estas loggeado como {{userdata}} </p>
         <div class="Logout">
             <a href="/">Cerrar Sesión</a>
-        </div>    
-        <br><br>
-        <div  class="botones">
+        </div>
+        <div class="botones">
             <a href="/MainSite/Mistutorias"> Ver estado tutorias</a>
-        </div>    
+        </div>
         <br><br><br>
         <div class="botones">
             <a href="/MainSite/TutoriasFinalizadas">Calificar tutoría</a>
-        </div>    
-        <br><br><br>
-
+        </div>
+        <br><br><br><br><br>
         <div class="row">
             <div class="column">
-                <a href="/MainSite/Ingenieria"> <img src="{{url_for("static",filename="img/IDN.png")}}" width="249" height="323"></a> 
+                <a href="/MainSite/Ingenieria"> <img src="{{url_for("static",filename="img/IDN.png")}}" width="249"
+                        height="323"></a>
             </div>
 
             <div class="column">
-                <a href="/MainSite/Economia"> <img src="{{url_for("static",filename="img/LEN.png")}}" width="249" height="323" ></a>
+                <a href="/MainSite/Economia"> <img src="{{url_for("static",filename="img/LEN.png")}}" width="249"
+                        height="323"></a>
             </div>
 
             <div class="column">
-                <a href="/MainSite/Derecho"> <img src="{{url_for("static",filename="img/LCJ.png")}}" width="259" height="333" ></a>
-            </div>    
+                <a href="/MainSite/Derecho"> <img src="{{url_for("static",filename="img/LCJ.png")}}" width="259"
+                        height="333"></a>
+            </div>
         </div>
-        
+
     </div>
 </body>
+
 </html>
